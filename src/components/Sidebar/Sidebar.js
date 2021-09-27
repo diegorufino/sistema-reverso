@@ -1,21 +1,3 @@
-/*!
-
-=========================================================
-* Paper Dashboard React - v1.3.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Nav } from "reactstrap";
@@ -28,7 +10,7 @@ var ps;
 
 function Sidebar(props) {
   const sidebar = React.useRef();
-  // verifies if routeName is the one active (in browser input)
+  const menu = props.routes.filter((m) => m.menu === true);
   const activeRoute = (routeName) => {
     return props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
   };
@@ -53,7 +35,7 @@ function Sidebar(props) {
     >
       <div className="logo">
         <a
-          href="https://www.creative-tim.com"
+          href="http://sistemareverso.cealma.org.br/"
           className="simple-text logo-mini"
         >
           <div className="logo-img">
@@ -61,15 +43,15 @@ function Sidebar(props) {
           </div>
         </a>
         <a
-          href="https://www.creative-tim.com"
+          href="http://sistemareverso.cealma.org.br/"
           className="simple-text logo-normal"
         >
-          Creative Tim
+          Sistema Reverso
         </a>
       </div>
       <div className="sidebar-wrapper" ref={sidebar}>
         <Nav>
-          {props.routes.map((prop, key) => {
+          {menu.map((prop, key) => {
             return (
               <li
                 className={
