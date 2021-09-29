@@ -106,7 +106,7 @@ const NovoFornecedor = () => {
       })
       .catch((error) => {
         setStatusMsg("danger");
-        setMensagem(error);
+        console.log(error);
       });
   };
 
@@ -293,10 +293,10 @@ const NovoFornecedor = () => {
                   <Row>
                     <div className="update ml-auto mr-auto">
                       <Button
-                        onClick={onSubmit}
                         className="btn-round"
                         color="primary"
-                        type="submit"
+                        type="button"
+                        onClick={onSubmit}
                       >
                         salvar
                       </Button>

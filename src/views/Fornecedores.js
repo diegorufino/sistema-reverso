@@ -114,7 +114,7 @@ const Fornecedores = () => {
                     {fornecedores.map((e) => (
                       <tr key={e.id_fornecedor}>
                         <td>{e.id_fornecedor}</td>
-                        <td>{e.cidade}</td>
+                        <td>{e.nome_fantasia}</td>
                         <td>{e.email}</td>
                         <td>{maskPhone(e.telefone)}</td>
                         <td className="text-right">
