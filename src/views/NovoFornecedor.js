@@ -118,7 +118,6 @@ const NovoFornecedor = () => {
         },
       })
       .then((response) => {
-        alert("Success");
         response.status === 202 && setStatusMsg("success");
         setMensagem(response.data.mensagem);
       })
